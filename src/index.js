@@ -1,3 +1,3 @@
-import { test } from "./home";
+import { create } from "./home";
 
-console.log(test(2,1));
+create();

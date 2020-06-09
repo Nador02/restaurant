@@ -1,0 +1,16 @@
+#content{
+    display:grid;
+    width:100vw;
+    height:100vh;
+    background-color:red;
+    grid-template-rows: 1fr 10fr .75fr;
+}
+.header{
+    background-color:white;
+}
+.middle{
+    background-color: aquamarine;
+}
+.footer{
+    background-color:rgb(77, 75, 75);
+}
