@@ -1,4 +1,14 @@
+.back{
+    position:absolute;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+}
 #content{
+    background-image:url("Demeter.png");
+    background-size:100% 100%;
+    
     display:grid;
     width:100vw;
     height:100vh;
@@ -6,11 +16,85 @@
     grid-template-rows: 1fr 10fr .75fr;
 }
 .header{
+    display:grid;
+    grid-template-columns:1fr .2fr 4.5fr;
     background-color:white;
 }
-.middle{
-    background-color: aquamarine;
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:trattatello;
+    color:gray;
+    font-size:2.5rem;
 }
-.footer{
-    background-color:rgb(77, 75, 75);
+.nav{
+    grid-column:3/4;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:white;
 }
+.navButt{
+    float:left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 80px;
+    text-decoration: none;
+    color:gray;
+    font-family:trattatello;
+    font-size:1.6rem;
+}
+.navButt:hover{
+    background-color:gray;
+    color:white;
+}
+.navButt:last-child{
+    float:right;
+}
+
+.midCont{
+    display:grid;
+    height:90vh;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(5,1fr);
+}
+.midText{
+    font-family:trattatello;
+    color:white;
+    grid-column:2/3;
+}
+.text1{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    grid-row:2/3;
+    font-size:3rem;
+}
+.text2{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    grid-row:3/4;
+    font-size:1.5rem;
+}
+.midButt{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:8vh;
+    grid-column:2/3;
+    grid-row:4/5;
+    background-color:transparent;
+    border:5px solid white;
+    font-family:trattatello;
+    color:white;
+    font-size:2.25rem;
+}
+
+
+
+
+
