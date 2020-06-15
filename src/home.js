@@ -1,14 +1,15 @@
-let create = () =>{
-    //Instantiating main boxes for the basic page layout
-    let main = document.getElementById("content");
-    let head = document.createElement("div");
-    let content = document.createElement("div");
-    main.appendChild(head);
-    main.appendChild(content);
-    head.classList.add("header");
-    content.classList.add("middle");
+import { menuCreate } from "./menu";
+import { createHome } from "./index";
+import { contactCreate } from "./contact";
 
-    //Customizing and adding to header/nav bar
+let main = document.getElementById("content");
+let status = false;
+
+let createNav = () =>{
+    let head = document.createElement("div");
+    main.appendChild(head);
+    head.classList.add("header");
+
     let logo = document.createElement("div");
     let nav = document.createElement("ul");
     let home = document.createElement("li");
@@ -29,6 +30,24 @@ let create = () =>{
     menu.textContent="Menu";
     contact.textContent="Contact us";
 
+    contact.style.backgroundColor = "white";
+    contact.style.color = "gray";
+    home.style.backgroundColor = "gray";
+    home.style.color = "white";
+    menu.style.backgroundColor = "white";
+    menu.style.color = "gray";
+}
+
+let create = () =>{
+    //Instantiating main boxes for the basic page layout
+    let content = document.createElement("div");
+    createNav();
+    main.appendChild(content);
+    content.classList.add("middle");
+
+    //Customizing and adding to header/nav bar
+
+
     //Customizing and adding content to main image/center of page
     let container = document.createElement("div");
     let midCont1 = document.createElement("div");
@@ -45,7 +64,24 @@ let create = () =>{
     midCont1.textContent = "From Harvest to Table.";
     midCont2.textContent = "\"The best food around since Kronos\" - The Olympus Times";
     midButt.textContent = "Visit the Menu";
-    
+
+    //Status of home page being rendered
+    status = true;
+    let menu = document.querySelector(".menu");
+    menu.addEventListener("click", menuCreate);
+    let home = document.querySelector(".home");
+    home.addEventListener("click", createHome);
+    let contact = document.querySelector(".contact");
+    contact.addEventListener("click", contactCreate);
+}
+let check = () =>{
+    if(status)
+        return true;
+    else
+        return false;
 }
 
-export { create };
+let clearPage = () =>{
+    main.innerHTML = "";
+}
+export { create, createNav, check, clearPage };
